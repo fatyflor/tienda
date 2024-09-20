@@ -1,0 +1,24 @@
+# monto total de la compra
+monto_compra = float(input("Ingresar el monto total de la compra: "))
+
+#  cliente  VIP
+es_vip = input("¿Es usted un cliente VIP? (si/no): ")
+
+# descuento total
+descuento_total = 0
+
+# Aplicar descuentos según el monto de la compra
+if monto_compra >= 1000:
+    descuento_total += monto_compra * 0.10
+elif monto_compra >= 500 and monto_compra < 1000:
+    descuento_total += monto_compra * 0.05
+
+# Aplicar descuento  para clientes VIP
+if es_vip.lower() == 's':
+    descuento_total += monto_compra * 0.05
+
+# Calcular el total final a pagar
+total_final = monto_compra - descuento_total
+
+# Mostrar el total final a pagar
+print("El total final a pagar es: ${:.2f}".format(total_final))
